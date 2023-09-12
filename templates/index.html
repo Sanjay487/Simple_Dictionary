@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>English Dictionary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            text-align: center;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+        }
+        #container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #search-box {
+            text-align: center;
+            margin: 20px 0;
+        }
+        #search-input {
+            padding: 10px;
+            width: 80%;
+            font-size: 18px;
+        }
+        #search-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        #search-results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>English Dictionary</h1>
+    </header>
+    <form action="word">
+     <div id="container">
+        <div id="search-box">
+            <input type="text" name="search" id="search-input" placeholder="Enter a word">
+            <button id="search-button" type="submit">Search</button>
+        </div>
+        <div id="search-results">
+            <h2>Definitions:</h2>
+            <p id="word-definition"></p>
+        </div>
+      </div>
+    </form>
+
+    <script>
+        // JavaScript for handling word search and displaying definitions
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+        const wordDefinition = document.getElementById('word-definition');
+
+        searchButton.addEventListener('click', () => {
+            const word = searchInput.value.trim(); // Remove leading/trailing spaces
+            if (word === '') {
+                alert('Please enter a word to search.');
+                return;
+            }
+
+            // You can implement word lookup and definition retrieval here
+            // For this basic example, we'll just display a message.
+            wordDefinition.textContent = `Definition of "${word}" will appear here once implemented.`;
+        });
+    </script>
+</body>
+</html>
